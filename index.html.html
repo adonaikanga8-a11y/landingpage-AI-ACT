@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Compliance Pack 2026 — Mise en conformité AI Act pour PME & Agences</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0f1923;
+  --navy-mid: #1a2840;
+  --navy-light: #243552;
+  --cream: #f5f0e8;
+  --cream-light: #faf8f4;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-pale: #f5e9c8;
+  --red: #c0392b;
+  --red-bg: #fdf0ee;
+  --green: #0d6e4a;
+  --green-bg: #e8f5ee;
+  --text: #1a2233;
+  --text-mid: #4a5568;
+  --text-light: #8896a8;
+  --border: rgba(15,25,35,.1);
+  --border-mid: rgba(15,25,35,.18);
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--cream-light);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(245,240,232,.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 19px;
+  color: var(--navy);
+  letter-spacing: -.01em;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a {
+  font-size: 13px; font-weight: 400; color: var(--text-mid);
+  text-decoration: none; letter-spacing: .01em;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--navy); }
+.nav-cta {
+  font-size: 13px; font-weight: 500;
+  background: var(--navy); color: var(--cream);
+  padding: 9px 20px; border-radius: 6px; border: none; cursor: pointer;
+  text-decoration: none; transition: background .2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--navy-mid); }
+
+/* ── HERO ── */
+.hero {
+  min-height: calc(100vh - 64px);
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 5rem 3rem 5rem 3rem;
+  gap: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 90% 10%, rgba(201,168,76,.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 10% 90%, rgba(15,25,35,.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-left { position: relative; z-index: 1; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; border: 1px solid var(--border-mid);
+  border-radius: 100px; padding: 6px 14px 6px 8px;
+  font-size: 12px; font-weight: 500; color: var(--red);
+  margin-bottom: 2rem;
+  animation: fadeDown .6s ease both;
+}
+.hero-badge-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--red);
+  animation: pulse 2s ease infinite;
+}
+@keyframes pulse {
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.5;transform:scale(.8)}
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  line-height: 1.1;
+  color: var(--navy);
+  letter-spacing: -.02em;
+  margin-bottom: 1.5rem;
+  animation: fadeDown .7s .1s ease both;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+.hero-sub {
+  font-size: 16px; font-weight: 300; color: var(--text-mid);
+  line-height: 1.75; max-width: 480px;
+  margin-bottom: 2.5rem;
+  animation: fadeDown .7s .2s ease both;
+}
+.hero-actions {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  animation: fadeDown .7s .3s ease both;
+}
+.btn-hero {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--navy); color: var(--cream);
+  padding: 14px 28px; border-radius: 8px; border: none;
+  font-family: var(--sans); font-size: 15px; font-weight: 500;
+  cursor: pointer; text-decoration: none;
+  transition: transform .15s, background .2s;
+}
+.btn-hero:hover { background: var(--navy-mid); transform: translateY(-1px); }
+.btn-hero svg { width: 16px; height: 16px; flex-shrink: 0; }
+.btn-ghost {
+  font-size: 14px; color: var(--text-mid); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 6px;
+  border-bottom: 1px solid var(--border-mid);
+  padding-bottom: 2px; transition: color .2s;
+}
+.btn-ghost:hover { color: var(--navy); }
+.hero-right {
+  position: relative; z-index: 1;
+  animation: fadeUp .8s .2s ease both;
+}
+.hero-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 40px rgba(15,25,35,.08);
+}
+.hero-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.hero-stat {
+  background: var(--cream); border-radius: 10px; padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+}
+.hero-stat-num {
+  font-family: var(--serif); font-size: 2rem; line-height: 1;
+  margin-bottom: .25rem;
+}
+.hero-stat-num.red { color: var(--red); }
+.hero-stat-num.gold { color: var(--gold); }
+.hero-stat-label { font-size: 11px; color: var(--text-light); line-height: 1.4; }
+.hero-deadline {
+  background: var(--navy); color: var(--cream); border-radius: 10px;
+  padding: 1rem 1.25rem;
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 1.5rem;
+}
+.hero-deadline-icon { font-size: 28px; flex-shrink: 0; }
+.hero-deadline-text .t { font-size: 11px; color: rgba(245,240,232,.5); margin-bottom: 2px; }
+.hero-deadline-text .v {
+  font-family: var(--serif); font-size: 1.3rem; color: var(--gold-light);
+}
+.hero-logos {
+  border-top: 1px solid var(--border); padding-top: 1rem;
+  font-size: 11px; color: var(--text-light);
+  display: flex; align-items: center; gap: .75rem; flex-wrap: wrap;
+}
+.hero-logos .logo-pill {
+  background: var(--cream); border: 1px solid var(--border);
+  border-radius: 100px; padding: 3px 10px;
+  font-size: 11px; font-weight: 500; color: var(--text-mid);
+}
+
+/* ── SECTIONS ── */
+.section { padding: 5rem 3rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag {
+  font-size: 11px; font-weight: 500; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-family: var(--serif); font-size: clamp(2rem, 3vw, 2.75rem);
+  line-height: 1.15; color: var(--navy); letter-spacing: -.02em;
+  margin-bottom: 1rem;
+}
+.section-title em { font-style: italic; }
+.section-lead {
+  font-size: 16px; font-weight: 300; color: var(--text-mid);
+  line-height: 1.75; max-width: 620px; margin-bottom: 3rem;
+}
+
+/* ── PROBLEM ── */
+.problem { background: var(--navy); color: var(--cream); }
+.problem .section-tag { color: var(--gold-light); }
+.problem .section-title { color: #fff; }
+.problem .section-lead { color: rgba(245,240,232,.65); }
+.problem-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5px; background: rgba(255,255,255,.1); border-radius: 12px; overflow: hidden;
+}
+.problem-card {
+  background: var(--navy-mid); padding: 2rem;
+}
+.problem-card-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 22px;
+}
+.problem-card h3 { font-size: 15px; font-weight: 500; color: #fff; margin-bottom: .5rem; }
+.problem-card p { font-size: 13px; color: rgba(245,240,232,.55); line-height: 1.65; }
+.stats-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: rgba(255,255,255,.08);
+  border-radius: 10px; overflow: hidden; margin-bottom: 3rem;
+}
+.stat-item {
+  background: var(--navy-light); padding: 1.5rem 1.25rem; text-align: center;
+}
+.stat-item .n {
+  font-family: var(--serif); font-size: 2.2rem; color: var(--gold-light);
+  line-height: 1; margin-bottom: .4rem;
+}
+.stat-item .l { font-size: 12px; color: rgba(245,240,232,.5); line-height: 1.4; }
+
+/* ── SOLUTION ── */
+.solution-grid {
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start;
+}
+.kit-box {
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+  box-shadow: 0 2px 30px rgba(15,25,35,.06);
+}
+.kit-header {
+  background: var(--navy); padding: 1.5rem 1.75rem;
+  display: flex; align-items: center; gap: 12px;
+}
+.kit-header-icon { font-size: 28px; }
+.kit-header div .t { font-size: 11px; color: rgba(245,240,232,.5); }
+.kit-header div .v { font-family: var(--serif); font-size: 1.2rem; color: #fff; }
+.kit-items { padding: 1.5rem 1.75rem; }
+.kit-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: .75rem 0; border-bottom: 1px solid var(--border);
+}
+.kit-item:last-child { border-bottom: none; }
+.kit-item-check {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--green-bg); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 2px;
+}
+.kit-item-check svg { width: 11px; height: 11px; color: var(--green); }
+.kit-item-text .name { font-size: 14px; font-weight: 500; color: var(--navy); }
+.kit-item-text .desc { font-size: 12px; color: var(--text-light); line-height: 1.5; }
+.promise-list { list-style: none; }
+.promise-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 1rem 0; border-bottom: 1px solid var(--border);
+  font-size: 15px; color: var(--text-mid);
+}
+.promise-list li:last-child { border-bottom: none; }
+.promise-list li::before {
+  content: '→'; color: var(--gold); font-family: var(--serif);
+  font-size: 18px; flex-shrink: 0; margin-top: -1px;
+}
+
+/* ── METHODOLOGY ── */
+.method-bg { background: var(--cream); }
+.steps-list { display: flex; flex-direction: column; gap: 0; }
+.step-row {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 1.5rem; padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.step-row:last-child { border-bottom: none; }
+.step-num-col { text-align: center; padding-top: .25rem; }
+.step-num-badge {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--navy); color: var(--cream);
+  font-family: var(--serif); font-size: 1.4rem;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 8px;
+}
+.step-duration {
+  font-size: 10px; color: var(--text-light); text-align: center;
+  white-space: nowrap;
+}
+.step-body h3 { font-size: 17px; font-weight: 500; color: var(--navy); margin-bottom: .5rem; }
+.step-body p { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: .75rem; }
+.step-body ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.step-body ul li {
+  font-size: 13px; color: var(--text-mid); padding-left: 1rem;
+  position: relative;
+}
+.step-body ul li::before {
+  content: '·'; position: absolute; left: 0;
+  color: var(--gold); font-size: 18px; line-height: 1;
+}
+.step-deliverable {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--green-bg); color: var(--green);
+  font-size: 12px; font-weight: 500;
+  padding: 4px 12px; border-radius: 100px; margin-top: .5rem;
+}
+
+/* ── PRICING ── */
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px; background: var(--border); border-radius: 16px; overflow: hidden;
+}
+.price-card {
+  background: #fff; padding: 2rem;
+  display: flex; flex-direction: column; gap: 0;
+  position: relative;
+}
+.price-card.featured { background: var(--navy); }
+.price-label {
+  font-size: 10px; font-weight: 500; letter-spacing: .1em;
+  text-transform: uppercase; margin-bottom: .75rem;
+}
+.price-card:not(.featured) .price-label { color: var(--gold); }
+.price-card.featured .price-label { color: var(--gold-light); }
+.price-popular {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  background: var(--gold); color: var(--navy);
+  font-size: 10px; font-weight: 500; padding: 3px 10px; border-radius: 100px;
+}
+.price-name {
+  font-family: var(--serif); font-size: 1.4rem; line-height: 1;
+  margin-bottom: .3rem;
+}
+.price-card:not(.featured) .price-name { color: var(--navy); }
+.price-card.featured .price-name { color: #fff; }
+.price-target {
+  font-size: 12px; color: var(--text-light); margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+.price-card.featured .price-target { color: rgba(245,240,232,.45); }
+.price-amount {
+  font-family: var(--serif); font-size: 2.6rem; line-height: 1;
+  margin-bottom: .25rem;
+}
+.price-card:not(.featured) .price-amount { color: var(--navy); }
+.price-card.featured .price-amount { color: var(--gold-light); }
+.price-unit { font-size: 13px; color: var(--text-light); margin-bottom: 1.5rem; }
+.price-card.featured .price-unit { color: rgba(245,240,232,.4); }
+.price-div {
+  height: 1px; background: var(--border); margin-bottom: 1.25rem;
+}
+.price-card.featured .price-div { background: rgba(255,255,255,.12); }
+.price-features { list-style: none; flex: 1; margin-bottom: 1.75rem; }
+.price-features li {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 13px; padding: 5px 0;
+  color: var(--text-mid);
+}
+.price-card.featured .price-features li { color: rgba(245,240,232,.7); }
+.price-features li svg { width: 14px; height: 14px; flex-shrink: 0; margin-top: 2px; }
+.price-card:not(.featured) .price-features li svg { color: var(--green); }
+.price-card.featured .price-features li svg { color: var(--gold-light); }
+.price-btn {
+  display: block; width: 100%; padding: 12px;
+  border-radius: 8px; text-align: center;
+  font-size: 14px; font-weight: 500; cursor: pointer;
+  text-decoration: none; transition: opacity .15s;
+  border: none; font-family: var(--sans);
+}
+.price-card:not(.featured) .price-btn {
+  background: var(--navy); color: var(--cream);
+}
+.price-card.featured .price-btn {
+  background: var(--gold); color: var(--navy);
+}
+.price-btn:hover { opacity: .85; }
+
+/* ── BOOKING ── */
+.booking-section { background: var(--navy); }
+.booking-section .section-tag { color: var(--gold-light); }
+.booking-section .section-title { color: #fff; }
+.booking-wrap {
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start;
+}
+.booking-pitch { }
+.booking-pitch p { font-size: 15px; color: rgba(245,240,232,.65); line-height: 1.8; margin-bottom: 1.5rem; }
+.urgency-list { list-style: none; }
+.urgency-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; color: rgba(245,240,232,.65); padding: .5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.urgency-list li:last-child { border-bottom: none; }
+.urgency-list li::before {
+  content: '⚠'; font-size: 13px; flex-shrink: 0; margin-top: 2px;
+}
+.booking-form-wrap {
+  background: #fff; border-radius: 16px; overflow: hidden;
+}
+.booking-form-header {
+  background: var(--gold); padding: 1.25rem 1.75rem;
+  display: flex; align-items: center; gap: 10px;
+}
+.booking-form-header span {
+  font-family: var(--serif); font-size: 1.1rem; color: var(--navy);
+}
+.booking-form-body { padding: 1.75rem; }
+
+/* ── FORM STYLES ── */
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+.field-single { margin-bottom: 14px; }
+.field-label {
+  display: block; font-size: 12px; font-weight: 500; color: var(--text-mid);
+  margin-bottom: 5px; letter-spacing: .01em;
+}
+.field-input, .field-select, .field-textarea {
+  width: 100%; padding: 10px 13px;
+  border: 1px solid var(--border-mid); border-radius: 8px;
+  font-family: var(--sans); font-size: 14px; color: var(--text);
+  background: var(--cream-light); outline: none;
+  transition: border-color .15s;
+}
+.field-input:focus, .field-select:focus, .field-textarea:focus {
+  border-color: var(--navy);
+}
+.field-textarea { height: 70px; resize: vertical; }
+.field-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238896a8' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 34px; }
+
+/* CALENDAR */
+.cal-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px;
+}
+.cal-nav-btn {
+  width: 32px; height: 32px; border-radius: 6px;
+  background: var(--cream); border: 1px solid var(--border-mid);
+  cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center;
+  color: var(--text-mid); transition: background .15s;
+}
+.cal-nav-btn:hover { background: var(--border); }
+.cal-week-label { font-size: 13px; font-weight: 500; color: var(--navy); }
+.cal-days { display: grid; grid-template-columns: repeat(5,1fr); gap: 4px; margin-bottom: 12px; }
+.cal-day {
+  padding: 8px 4px; border-radius: 6px; border: 1px solid var(--border);
+  text-align: center; cursor: pointer; background: var(--cream-light);
+  transition: border-color .15s, background .15s;
+}
+.cal-day:hover { border-color: var(--navy); }
+.cal-day.active { border-color: var(--navy); background: var(--navy); }
+.cal-day .dn { font-size: 11px; font-weight: 500; }
+.cal-day:not(.active) .dn { color: var(--text-light); }
+.cal-day.active .dn { color: rgba(245,240,232,.6); }
+.cal-day .dd { font-size: 15px; font-weight: 500; }
+.cal-day:not(.active) .dd { color: var(--navy); }
+.cal-day.active .dd { color: #fff; }
+.slots-label { font-size: 12px; color: var(--text-light); margin-bottom: 8px; }
+.slots-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-bottom: 1.25rem; }
+.slot-btn {
+  padding: 8px; border-radius: 6px; border: 1px solid var(--border-mid);
+  font-size: 12px; font-weight: 500; cursor: pointer;
+  background: #fff; color: var(--text-mid); text-align: center;
+  transition: border-color .15s, background .15s, color .15s;
+}
+.slot-btn:hover:not(.busy) { border-color: var(--navy); color: var(--navy); }
+.slot-btn.selected { border-color: var(--navy); background: var(--navy); color: #fff; }
+.slot-btn.busy {
+  opacity: .35; text-decoration: line-through; cursor: not-allowed; font-size: 11px;
+}
+.book-btn {
+  width: 100%; padding: 13px;
+  background: var(--navy); color: var(--cream);
+  border: none; border-radius: 8px;
+  font-family: var(--sans); font-size: 15px; font-weight: 500;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: background .2s, opacity .2s;
+}
+.book-btn:disabled { opacity: .4; cursor: not-allowed; }
+.book-btn:not(:disabled):hover { background: var(--navy-mid); }
+.book-notice {
+  background: #fff8ee; border: 1px solid #f0d88a;
+  border-radius: 8px; padding: .75rem 1rem;
+  font-size: 12px; color: #7a5a10; margin-bottom: 1rem;
+  display: flex; gap: 8px;
+}
+.success-panel {
+  text-align: center; padding: 2rem;
+}
+.success-panel .s-icon { font-size: 40px; margin-bottom: .75rem; }
+.success-panel h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--navy); margin-bottom: .5rem; }
+.success-panel p { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy); color: rgba(245,240,232,.45);
+  padding: 2rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem; font-size: 12px;
+}
+footer .fl { font-family: var(--serif); font-size: 16px; color: var(--cream); }
+footer .fl span { color: var(--gold); }
+
+/* ── ANIM ── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; padding: 3rem 1.5rem; }
+  .hero-right { display: none; }
+  .section { padding: 3.5rem 1.5rem; }
+  .solution-grid, .booking-wrap { grid-template-columns: 1fr; gap: 2rem; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .stats-strip { grid-template-columns: repeat(2,1fr); }
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">AI<span>Compliance</span> Pack</div>
+  <div class="nav-links">
+    <a href="#probleme">Le problème</a>
+    <a href="#solution">La solution</a>
+    <a href="#methodologie">Méthodologie</a>
+    <a href="#offres">Offres</a>
+  </div>
+  <a href="https://calendly.com/adonaikanga8" target="_blank" rel="noopener" class="nav-cta">Diagnostic gratuit →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Échéance légale : 2 août 2026
+    </div>
+    <h1>Votre entreprise utilise des IA.<br>Est-elle en <em>conformité</em>&nbsp;?</h1>
+    <p class="hero-sub">Le Règlement européen sur l'IA entre pleinement en vigueur le 2 août 2026. Chatbots non déclarés, données clients dans ChatGPT, outils RH automatisés — nous transformons la complexité juridique en actions concrètes pour votre structure.</p>
+    <div class="hero-actions">
+      <a href="https://calendly.com/adonaikanga8" target="_blank" rel="noopener" class="btn-hero">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+        Demander un diagnostic flash gratuit
+      </a>
+      <a href="#solution" class="btn-ghost">Voir le kit de conformité ↓</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <div class="hero-stat-num red">35 M€</div>
+          <div class="hero-stat-label">Amende maximale AI Act — pratiques interdites</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num gold">4 %</div>
+          <div class="hero-stat-label">Du CA mondial — sanction RGPD cumulable</div>
+        </div>
+      </div>
+      <div class="hero-deadline">
+        <div class="hero-deadline-icon">⏳</div>
+        <div class="hero-deadline-text">
+          <div class="t">Pleine applicabilité</div>
+          <div class="v">2 août 2026 — systèmes à risque élevé</div>
+        </div>
+      </div>
+      <div class="hero-logos">
+        <span>Réglementation applicable à&nbsp;:</span>
+        <span class="logo-pill">ChatGPT</span>
+        <span class="logo-pill">Chatbots</span>
+        <span class="logo-pill">CRM IA</span>
+        <span class="logo-pill">Outils RH</span>
+        <span class="logo-pill">Midjourney</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section problem" id="probleme">
+  <div class="section-inner">
+    <div class="section-tag reveal">Le problème</div>
+    <h2 class="section-title reveal">Votre Shadow AI vous expose —<br><em>sans que vous le sachiez</em></h2>
+    <p class="section-lead reveal">Dans la majorité des PME et agences, les outils IA prolifèrent sans gouvernance. L'AI Act 2026 change radicalement la donne.</p>
+    <div class="stats-strip reveal">
+      <div class="stat-item"><div class="n">4 %</div><div class="l">du CA annuel mondial — amende RGPD max. pour fuite de données via IA</div></div>
+      <div class="stat-item"><div class="n">35 M€</div><div class="l">sanction maximale AI Act pour pratique interdite (Art. 5)</div></div>
+      <div class="stat-item"><div class="n">fév. 25</div><div class="l">obligation de formation IA des collaborateurs déjà en vigueur (Art. 4)</div></div>
+      <div class="stat-item"><div class="n">49 %</div><div class="l">des entreprises non préparées à l'échéance d'août 2026</div></div>
+    </div>
+    <div class="problem-grid reveal">
+      <div class="problem-card">
+        <div class="problem-card-icon" style="background:rgba(192,57,43,.15)">🕵️</div>
+        <h3>Shadow AI non contrôlé</h3>
+        <p>Vos collaborateurs utilisent des outils IA non référencés et y saisissent des données confidentielles — clients, contrats, données RH.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon" style="background:rgba(201,168,76,.15)">💾</div>
+        <h3>Fuites de données clients</h3>
+        <p>Les versions gratuites de ChatGPT utilisent les données saisies pour entraîner leurs modèles. Vos informations sensibles peuvent devenir publiques.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon" style="background:rgba(26,52,96,.2)">🤖</div>
+        <h3>Chatbots non déclarés</h3>
+        <p>Un chatbot qui ne se présente pas comme IA viole l'Article 50. Obligation légale : vos clients ont le droit de savoir.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon" style="background:rgba(192,57,43,.15)">👥</div>
+        <h3>RH automatisée sans cadre</h3>
+        <p>Tout outil IA impliqué dans le recrutement ou l'évaluation est classé Risque Élevé par l'AI Act — avec des obligations strictes de documentation et de recours humain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="section" id="solution">
+  <div class="section-inner">
+    <div class="section-tag reveal">La solution</div>
+    <h2 class="section-title reveal">Le Kit de Conformité AI Act 2026 —<br><em>simple, complet, opérationnel</em></h2>
+    <p class="section-lead reveal">Nous ne livrons pas un rapport de 80 pages. Nous remettons un kit clé en main, actionnable immédiatement, calibré pour la réalité des PME et agences.</p>
+    <div class="solution-grid reveal">
+      <div>
+        <div class="kit-box">
+          <div class="kit-header">
+            <div class="kit-header-icon">📦</div>
+            <div>
+              <div class="t">Contenu du livrable</div>
+              <div class="v">Kit de Conformité AI Act</div>
+            </div>
+          </div>
+          <div class="kit-items">
+            <div class="kit-item">
+              <div class="kit-item-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+              <div class="kit-item-text"><div class="name">Registre de Gouvernance IA</div><div class="desc">Inventaire complet, niveaux de risque et mesures prises</div></div>
+            </div>
+            <div class="kit-item">
+              <div class="kit-item-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+              <div class="kit-item-text"><div class="name">Rapport d'audit complet</div><div class="desc">Cartographie des actifs IA + feuille de route priorisée</div></div>
+            </div>
+            <div class="kit-item">
+              <div class="kit-item-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+              <div class="kit-item-text"><div class="name">Charte Interne IA</div><div class="desc">Document signable — confidentialité, littératie, supervision humaine (Art. 4)</div></div>
+            </div>
+            <div class="kit-item">
+              <div class="kit-item-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+              <div class="kit-item-text"><div class="name">Scripts de transparence web</div><div class="desc">Balises et mentions prêtes à intégrer (Art. 50)</div></div>
+            </div>
+            <div class="kit-item">
+              <div class="kit-item-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></div>
+              <div class="kit-item-text"><div class="name">Attestation de Conformité</div><div class="desc">Document opposable daté — prouve la démarche en cas de contrôle</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <ul class="promise-list">
+          <li>Adapté aux contraintes d'une PME ou d'une agence — sans département juridique interne requis.</li>
+          <li>Résultat livrable en moins de deux semaines, selon le périmètre de la mission.</li>
+          <li>Aucun jargon inutile — chaque obligation légale est traduite en action concrète et opérationnelle.</li>
+          <li>Approche modulaire : trois formules calibrées sur votre niveau de risque réel, évalué lors du diagnostic préalable.</li>
+          <li>Suivi inclus dans le Pack Premium — revue de conformité à 6 mois pour les structures les plus exposées.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="section method-bg" id="methodologie">
+  <div class="section-inner">
+    <div class="section-tag reveal">Notre méthodologie</div>
+    <h2 class="section-title reveal">5 étapes. <em>Moins de 2 semaines.</em></h2>
+    <p class="section-lead reveal">Un processus éprouvé, séquentiel et transparent. Vous savez à chaque étape ce que nous faisons, pourquoi, et ce que vous obtenez.</p>
+    <div class="steps-list">
+      <div class="step-row reveal">
+        <div class="step-num-col">
+          <div class="step-num-badge">1</div>
+          <div class="step-duration">1–2 jours</div>
+        </div>
+        <div class="step-body">
+          <h3>Cartographie des actifs IA (Shadow AI)</h3>
+          <p>Recensement exhaustif de tous les outils utilisés dans votre structure — y compris les usages non déclarés par les équipes.</p>
+          <ul>
+            <li>Questionnaire interne déployé dans chaque service (Marketing, RH, IT, Support, Direction)</li>
+            <li>Documentation de chaque outil : fournisseur, données traitées, fréquence, département</li>
+            <li>Identification du statut réglementaire : Déployeur ou Fournisseur</li>
+          </ul>
+          <span class="step-deliverable">📋 Registre IA brut</span>
+        </div>
+      </div>
+      <div class="step-row reveal">
+        <div class="step-num-col">
+          <div class="step-num-badge">2</div>
+          <div class="step-duration">1–2 jours</div>
+        </div>
+        <div class="step-body">
+          <h3>Classification des risques selon l'AI Act</h3>
+          <p>Positionnement de chaque outil sur la grille réglementaire pour prioriser les actions et dimensionner les obligations.</p>
+          <ul>
+            <li>Application de la grille AI Act : Inacceptable / Élevé / Limité / Minimal</li>
+            <li>Focus sur les outils RH, de scoring client et d'automatisation de décisions</li>
+            <li>Justification documentée pour chaque classification</li>
+          </ul>
+          <span class="step-deliverable">⚖️ Registre enrichi avec niveaux de risque</span>
+        </div>
+      </div>
+      <div class="step-row reveal">
+        <div class="step-num-col">
+          <div class="step-num-badge">3</div>
+          <div class="step-duration">1 jour</div>
+        </div>
+        <div class="step-body">
+          <h3>Audit de transparence web & interfaces</h3>
+          <p>Vérification que vos interfaces exposées aux utilisateurs respectent les obligations de l'Article 50 de l'AI Act.</p>
+          <ul>
+            <li>Contrôle des chatbots et assistants : l'utilisateur est-il informé qu'il parle à une IA ?</li>
+            <li>Vérification du marquage des contenus générés (articles, fiches produits, visuels)</li>
+            <li>Examen des mentions légales et politiques de confidentialité</li>
+          </ul>
+          <span class="step-deliverable">🔍 Rapport de conformité des interfaces</span>
+        </div>
+      </div>
+      <div class="step-row reveal">
+        <div class="step-num-col">
+          <div class="step-num-badge">4</div>
+          <div class="step-duration">2–3 jours</div>
+        </div>
+        <div class="step-body">
+          <h3>Plan de remédiation & programme de littératie</h3>
+          <p>Définition des actions correctives et du plan de formation obligatoire du personnel conforme à l'Article 4.</p>
+          <ul>
+            <li>Hiérarchisation des non-conformités : Critique / Majeure / Mineure</li>
+            <li>Rédaction des mesures techniques et contractuelles à mettre en place</li>
+            <li>Programme de formation « Littératie IA » avec validation des acquis</li>
+          </ul>
+          <span class="step-deliverable">🗺️ Feuille de route avec responsables & échéances</span>
+        </div>
+      </div>
+      <div class="step-row reveal">
+        <div class="step-num-col">
+          <div class="step-num-badge">5</div>
+          <div class="step-duration">1 jour</div>
+        </div>
+        <div class="step-body">
+          <h3>Remise du Kit de Conformité & attestation</h3>
+          <p>Consolidation de l'ensemble des livrables dans un dossier de conformité opposable, remis lors d'une réunion de restitution.</p>
+          <ul>
+            <li>Registre de Gouvernance IA finalisé</li>
+            <li>Charte Interne IA signée par la direction</li>
+            <li>Scripts de transparence intégrés sur les interfaces web</li>
+            <li>Attestation de Conformité AI Act datée</li>
+          </ul>
+          <span class="step-deliverable">✅ Kit de Conformité complet</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="offres">
+  <div class="section-inner">
+    <div class="section-tag reveal">Nos offres</div>
+    <h2 class="section-title reveal">Trois formules. <em>Un périmètre calibré.</em></h2>
+    <p class="section-lead reveal">Vous ne payez pas pour ce dont vous n'avez pas besoin. Le questionnaire de qualification détermine objectivement quelle formule correspond à votre profil réel.</p>
+    <div class="pricing-grid reveal">
+
+      <div class="price-card">
+        <div class="price-label">Risque minimal</div>
+        <div class="price-name">Pack Initial</div>
+        <div class="price-target">Sites vitrines, outils génériques, automatisations simples sans impact sur des personnes.</div>
+        <div class="price-amount">1 490 €</div>
+        <div class="price-unit">HT — forfait tout inclus</div>
+        <div class="price-div"></div>
+        <ul class="price-features">
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Questionnaire de qualification (15 questions)</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Cartographie des actifs IA</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Rapport de classification des risques</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Charte Interne IA (template signable)</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Attestation de Conformité AI Act</li>
+        </ul>
+        <a href="https://calendly.com/adonaikanga8" target="_blank" rel="noopener" class="price-btn">Sélectionner →</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-popular">Le plus demandé</div>
+        <div class="price-label">Risque limité — Transparence web</div>
+        <div class="price-name">Pack Intermédiaire</div>
+        <div class="price-target">Agences, e-commerçants et PME avec chatbots, contenu généré par IA ou personnalisation client.</div>
+        <div class="price-amount">2 990 €</div>
+        <div class="price-unit">HT — forfait tout inclus</div>
+        <div class="price-div"></div>
+        <ul class="price-features">
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Tout le Pack Initial</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Audit complet des interfaces web & chatbots</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Scripts de transparence web (Art. 50) — prêts à intégrer</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Feuille de route de remédiation priorisée</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Session de formation littératie IA — 2h, jusqu'à 10 collaborateurs</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Registre de Gouvernance IA complet</li>
+        </ul>
+        <a href="https://calendly.com/adonaikanga8" target="_blank" rel="noopener" class="price-btn">Sélectionner →</a>
+      </div>
+
+      <div class="price-card">
+        <div class="price-label">Risque élevé — Haute sécurité</div>
+        <div class="price-name">Pack Premium</div>
+        <div class="price-target">Structures avec outils RH, scoring automatisé ou décisions impactant des personnes physiques.</div>
+        <div class="price-amount">5 500 €</div>
+        <div class="price-unit">HT — forfait tout inclus</div>
+        <div class="price-div"></div>
+        <ul class="price-features">
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Tout le Pack Intermédiaire</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Audit approfondi systèmes à Risque Élevé</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Documentation technique (Art. 13 AI Act)</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Revue des contrats fournisseurs IA</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Procédure de gestion d'incidents IA</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Désignation & briefing du Référent IA interne</li>
+          <li><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l3 3 7-7"/></svg>Suivi de conformité à 6 mois inclus</li>
+        </ul>
+        <a href="https://calendly.com/adonaikanga8" target="_blank" rel="noopener" class="price-btn">Sélectionner →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="section booking-section" id="diagnostic">
+  <div class="section-inner">
+    <div class="booking-wrap">
+      <div class="booking-pitch">
+        <div class="section-tag reveal">Diagnostic flash gratuit</div>
+        <h2 class="section-title reveal">Le 2 août 2026, il sera trop tard<br><em>pour se préparer</em></h2>
+        <p class="reveal" style="color:rgba(245,240,232,.65);font-size:15px;line-height:1.8;margin-bottom:1.5rem">Les autorités de contrôle ne vous laisseront pas le temps de lire le règlement. La conformité se prouve — elle ne s'improvise pas le jour du contrôle.</p>
+        <ul class="urgency-list reveal">
+          <li>Les premières enquêtes cibleront les chatbots non déclarés et les RH automatisées sans documentation</li>
+          <li>Une même infraction peut déclencher des sanctions AI Act ET RGPD simultanément</li>
+          <li>Démontrer une démarche proactive réduit significativement le niveau de sanction applicable</li>
+          <li>Chaque semaine gagnée aujourd'hui est une semaine de moins sous pression réglementaire</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="booking-form-wrap">
+          <div class="booking-form-header">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <span>Réserver un diagnostic flash — 30 min</span>
+          </div>
+          <div class="booking-form-body" id="bookingBody">
+            <div class="book-notice">
+              ℹ Les créneaux sont synchronisés avec votre agenda Google Calendar en temps réel.
+            </div>
+            <!-- STEP 1: Calendar -->
+            <div id="bkStep1">
+              <div class="cal-nav">
+                <button class="cal-nav-btn" id="calPrev">←</button>
+                <span class="cal-week-label" id="calWeekLabel"></span>
+                <button class="cal-nav-btn" id="calNext">→</button>
+              </div>
+              <div class="cal-days" id="calDays"></div>
+              <div class="slots-label" id="slotsLabel">← Sélectionnez un jour pour voir les créneaux</div>
+              <div class="slots-grid" id="slotsGrid"></div>
+              <button class="book-btn" id="btnStep1" disabled>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                Continuer
+              </button>
+            </div>
+            <!-- STEP 2: Contact -->
+            <div id="bkStep2" style="display:none">
+              <div class="field-row">
+                <div><label class="field-label">Prénom *</label><input class="field-input" id="bkFname" type="text" placeholder="Jean"></div>
+                <div><label class="field-label">Nom *</label><input class="field-input" id="bkLname" type="text" placeholder="Dupont"></div>
+              </div>
+              <div class="field-single">
+                <label class="field-label">Email *</label>
+                <input class="field-input" id="bkEmail" type="email" placeholder="jean.dupont@entreprise.com">
+              </div>
+              <div class="field-single">
+                <label class="field-label">Entreprise</label>
+                <input class="field-input" id="bkCompany" type="text" placeholder="Nom de votre structure">
+              </div>
+              <div class="field-single">
+                <label class="field-label">Formule envisagée</label>
+                <select class="field-select" id="bkPack">
+                  <option value="">Je ne sais pas encore — à déterminer lors du diagnostic</option>
+                  <option value="Initial">Pack Initial — 1 490 € HT (Risque Minimal)</option>
+                  <option value="Intermédiaire">Pack Intermédiaire — 2 990 € HT (Risque Limité)</option>
+                  <option value="Premium">Pack Premium — 5 500 € HT (Risque Élevé)</option>
+                </select>
+              </div>
+              <div class="field-single">
+                <label class="field-label">Votre contexte en quelques mots</label>
+                <textarea class="field-textarea" id="bkNotes" placeholder="Ex : nous utilisons ChatGPT dans notre équipe marketing, un chatbot sur notre site e-commerce, un CRM avec scoring automatique…"></textarea>
+              </div>
+              <div id="bkErr" style="display:none;background:#fdf0ee;border:1px solid #e8aaaa;border-radius:8px;padding:.75rem 1rem;font-size:13px;color:#a32d2d;margin-bottom:1rem">
+                Veuillez renseigner prénom, nom et email.
+              </div>
+              <button class="book-btn" id="btnStep2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01"/></svg>
+                Confirmer le rendez-vous
+              </button>
+            </div>
+            <!-- STEP 3: Success -->
+            <div id="bkStep3" style="display:none">
+              <div class="success-panel">
+                <div class="s-icon">✅</div>
+                <h3>Rendez-vous confirmé !</h3>
+                <p id="bkConfirmText"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">AI<span>Compliance</span> Pack</div>
+  <div>Règlement (UE) 2024/1689 — AI Act 2026 · Tous droits réservés</div>
+</footer>
+
+<script>
+// ── SCROLL REVEAL ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// ── BOOKING LOGIC ──
+const SLOTS = ['09:00','09:30','10:00','10:30','11:00','11:30','14:00','14:30','15:00','15:30','16:00','16:30'];
+const DURATION = 30;
+let weekOffset = 0, selDay = null, selSlot = null, busyMap = {};
+
+function monday(off) {
+  const d = new Date();
+  const day = d.getDay() || 7;
+  d.setDate(d.getDate() - day + 1 + off * 7);
+  d.setHours(0,0,0,0);
+  return d;
+}
+function isoDate(d) {
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+function isoTs(dayDate, time) {
+  const [h,m] = time.split(':');
+  const d = new Date(dayDate);
+  d.setHours(+h, +m, 0, 0);
+  return d.toISOString();
+}
+function isSlotBusy(dayDate, time) {
+  const key = isoDate(dayDate);
+  const busy = busyMap[key] || [];
+  const [h,m] = time.split(':');
+  const ss = new Date(dayDate); ss.setHours(+h,+m,0,0);
+  const se = new Date(ss); se.setMinutes(se.getMinutes() + DURATION);
+  return busy.some(b => ss < b.e && se > b.s);
+}
+
+function buildCal() {
+  const start = monday(weekOffset);
+  const end = new Date(start); end.setDate(end.getDate() + 4);
+  const fmt = d => d.toLocaleDateString('fr-FR', {day:'numeric',month:'short'});
+  document.getElementById('calWeekLabel').textContent = `${fmt(start)} – ${fmt(end)}`;
+  const wrap = document.getElementById('calDays'); wrap.innerHTML = '';
+  const days = ['Lun','Mar','Mer','Jeu','Ven'];
+  for (let i = 0; i < 5; i++) {
+    const d = new Date(start); d.setDate(d.getDate() + i);
+    const iso = isoDate(d);
+    const btn = document.createElement('div');
+    btn.className = 'cal-day' + (selDay === iso ? ' active' : '');
+    btn.innerHTML = `<div class="dn">${days[i]}</div><div class="dd">${d.getDate()}</div>`;
+    btn.onclick = () => { selDay = iso; selSlot = null; buildCal(); buildSlots(d); document.getElementById('btnStep1').disabled = true; };
+    wrap.appendChild(btn);
+  }
+  if (selDay) {
+    const sd = new Date(selDay + 'T00:00:00');
+    buildSlots(sd);
+  }
+}
+
+function buildSlots(dayDate) {
+  const label = document.getElementById('slotsLabel');
+  const grid = document.getElementById('slotsGrid');
+  label.textContent = dayDate.toLocaleDateString('fr-FR', {weekday:'long', day:'numeric', month:'long'});
+  grid.innerHTML = '';
+  SLOTS.forEach(t => {
+    const busy = isSlotBusy(dayDate, t);
+    const btn = document.createElement('button');
+    btn.className = 'slot-btn' + (busy ? ' busy' : '') + (selSlot === t && !busy ? ' selected' : '');
+    btn.textContent = busy ? t + ' — occupé' : t;
+    if (!busy) btn.onclick = () => { selSlot = t; buildSlots(dayDate); document.getElementById('btnStep1').disabled = false; };
+    grid.appendChild(btn);
+  });
+}
+
+document.getElementById('calPrev').onclick = () => { weekOffset--; selSlot = null; buildCal(); document.getElementById('btnStep1').disabled = true; };
+document.getElementById('calNext').onclick = () => { weekOffset++; selSlot = null; buildCal(); document.getElementById('btnStep1').disabled = true; };
+
+document.getElementById('btnStep1').onclick = () => {
+  document.getElementById('bkStep1').style.display = 'none';
+  document.getElementById('bkStep2').style.display = '';
+};
+
+document.getElementById('btnStep2').onclick = () => {
+  const fn = document.getElementById('bkFname').value.trim();
+  const ln = document.getElementById('bkLname').value.trim();
+  const em = document.getElementById('bkEmail').value.trim();
+  if (!fn || !ln || !em) { document.getElementById('bkErr').style.display = 'block'; return; }
+  document.getElementById('bkErr').style.display = 'none';
+
+  const btn = document.getElementById('btnStep2');
+  btn.disabled = true;
+  btn.innerHTML = '⏳ Création du rendez-vous…';
+
+  const dayDate = new Date(selDay + 'T00:00:00');
+  const startIso = isoTs(dayDate, selSlot);
+  const endDate = new Date(startIso); endDate.setMinutes(endDate.getMinutes() + DURATION);
+  const co = document.getElementById('bkCompany').value.trim();
+  const pack = document.getElementById('bkPack').value;
+  const notes = document.getElementById('bkNotes').value.trim();
+
+  const desc = `Diagnostic flash AI Compliance Pack 2026 — 30 min\n\nClient : ${fn} ${ln}${co ? ' — ' + co : ''}\nEmail : ${em}${pack ? '\nFormule envisagée : Pack ' + pack : ''}${notes ? '\n\nContexte : ' + notes : ''}`;
+  const title = `Diagnostic flash AI Compliance — ${fn} ${ln}${co ? ' (' + co + ')' : ''}`;
+
+  // Post message to parent to trigger Claude tool call
+  if (window.parent && window.parent !== window) {
+    window.parent.postMessage({
+      type: 'BOOK_APPOINTMENT',
+      payload: { title, startIso, endIso: endDate.toISOString(), email: em, description: desc }
+    }, '*');
+  }
+
+  // Use sendPrompt if available
+  if (typeof sendPrompt === 'function') {
+    sendPrompt(`Crée un événement Google Calendar :
+- Titre : "${title}"
+- Début : ${startIso}
+- Fin : ${endDate.toISOString()}
+- Description : ${desc}
+- Google Meet : oui
+- Email participant : ${em}
+Confirme le lien Meet et l'heure en français.`);
+  }
+
+  document.getElementById('bkStep2').style.display = 'none';
+  document.getElementById('bkStep3').style.display = '';
+
+  const d = new Date(selDay + 'T00:00:00');
+  document.getElementById('bkConfirmText').innerHTML =
+    `<strong>${d.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'})}</strong> à <strong>${selSlot}</strong>${fn ? ' avec ' + fn + ' ' + ln : ''}${co ? ' (' + co + ')' : ''}.<br><br>Un lien Google Meet a été créé. L'invitation a été envoyée à <strong>${em}</strong>.`;
+};
+
+buildCal();
+</script>
+</body>
+</html>
